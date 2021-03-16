@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h4 class="ion-text-center">Update Product Data</h4>
+  <ion-card color="danger" class="ion-padding">
+    <ion-label position="floating">Product Images</ion-label>
+    <ion-input [(ngModel)]="product.Images"></ion-input><br>
+
+      <ion-label position="floating">Product Name</ion-label>
+      <ion-input [(ngModel)]="product.Name"></ion-input><br>
+
+      <ion-label position="floating">Product Price</ion-label>
+      <ion-input [(ngModel)]="product.Price"></ion-input><br>
+
+      <ion-label position="floating">Product Author</ion-label>
+      <ion-input [(ngModel)]="product.Author"></ion-input><br>
+
+      <ion-label position="floating">Product Amount</ion-label>
+      <ion-input [(ngModel)]="product.Amount"></ion-input><br>
+    </ion-card>
+      <ion-button (click)="updateProduct(product)" expand="block" fill="solid" shape="round" color="dark">Save</ion-button>
+</ion-content>

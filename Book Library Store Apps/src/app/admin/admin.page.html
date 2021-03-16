@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="light" class="ion-text-center" color="danger">
+    <ion-title>Dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/login-admin']" >
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-grid fixed class="ion-text-center">
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="card-admin" [routerLink]="['/product-view']" color="danger">
+          <img src="./assets/book.png" />
+          <ion-card-header>
+            <ion-card-subtitle class="font-admin">Manage Product</ion-card-subtitle>
+            <ion-card-title></ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-card class="card-admin" [routerLink]="['/view-message']" color="danger">
+          <img src="./assets/email.png" />
+          <ion-card-header>
+            <ion-card-subtitle class="font-admin">Read Message</ion-card-subtitle>
+            <ion-card-title></ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

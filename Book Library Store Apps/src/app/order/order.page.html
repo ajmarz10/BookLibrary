@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title class="ion-text-center">Order Confirmed</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-text-center" color="danger">
+    <ion-card-header>
+      <img src="assets/unicorn.png" style="width: 100px; height: 100px ;" alt="">
+      <h4><b>Thank You For Choosing Us!</b></h4>
+      <h6><b>We kindly receive your order. The item has been processing and we will deliver for you!</b></h6>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-button [routerLink]="['/tabs']" expand="block" fill="solid" shape="round" color="dark">
+    Redirect To Home
+  </ion-button>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Product</ion-title>
+      <ion-button [routerLink]="['/cart-modal']"  #cart color="dark" fill="clear" slot="end">
+        <div style="color: #fff;" class="cart-length">{{ cartItemCount | async }}</div>
+        <ion-icon name="bag-outline" class="cart-icon"></ion-icon>
+      </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-searchbar placeholder="Search.." [(ngModel)]="term" color="danger">
+
+  </ion-searchbar>
+
+  
+
+<ion-row>
+    <ion-card class="card" style="width: 42%" *ngFor="let p of bookList | filter:term" color="danger">
+      <ion-img src="{{ p.Images }}"></ion-img>
+     <ion-card-header>
+       <ion-card-title class="ion-text-center">{{p.Name}}</ion-card-title>
+     </ion-card-header>
+
+     <ion-card-subtitle class="ion-text-center">{{p.Author}}</ion-card-subtitle>
+
+      <ion-card-content class="ion-text-center">
+        <ion-label color="secondary">
+          <b>{{ p.Price | currency: 'RM' }}</b>
+        </ion-label>
+
+        <ion-button (click)="addToCart(p)" expand="block" fill="solid" shape="round" color="dark">
+          Add
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+</ion-row>
+
+</ion-content>

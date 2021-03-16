@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Shopping Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="ion-padding">
+    <ion-list>
+      <ion-item *ngFor="let p of cart" class="ion-text-wrap">
+        <ion-grid>
+          <ion-row class="ion-align-items-center">
+            <ion-col size="2" class="ion-align-self-center">
+              <ion-button color="medium" fill="clear" (click)="decreaseCartItem(p)">
+                <ion-icon slot="icon-only" name="remove-circle"></ion-icon>
+              </ion-button>
+            </ion-col>
+
+            <ion-col size="2" class="ion-text-center">
+              {{ p.Amount }}
+            </ion-col>
+
+            <ion-col size="2" class="ion-text-center">
+              <ion-button color="medium" fill="clear" (click)="increaseCartItem(p)">
+                <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+              </ion-button>
+            </ion-col>
+
+            <ion-col size="1" offset="4">
+              <ion-button color="medium" fill="clear" (click)="removeCartItem(p)">
+                <ion-icon slot="icon-only" name="close-circle"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="8">
+              <b>{{ p.Name }}</b>
+            </ion-col>
+            <ion-col size="4" class="ion-text-end">
+              {{ p.Amount * p.Price | currency: 'RM' }}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="8">
+              Total:
+            </ion-col>
+            <ion-col size="4" class="ion-text-end">
+              {{ getTotal() | currency: 'RM' }}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+    <ion-button (click)="checkout()" expand="full" fill="solid" shape="round" color="dark" [routerLink]="['/checkout']">
+      Checkout
+    </ion-button>
+
+  </div>
+</ion-content>

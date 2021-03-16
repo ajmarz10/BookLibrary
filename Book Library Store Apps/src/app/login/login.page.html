@@ -1,0 +1,36 @@
+<ion-content color="danger">
+
+  <div id="images">
+   <img src="/assets/logobackup.PNG" alt="">
+  </div>
+
+  <div id="main">
+  <ion-card>
+  <ion-card-content>
+   <h1 class="ion-text-center">SIGN IN</h1>
+  
+  <ion-item>
+  <ion-input type="email" [(ngModel)]="user.email"  placeholder="Email" required></ion-input >
+  </ion-item>
+
+  <ion-item>
+  <ion-input type="password" [(ngModel)]="user.password" placeholder="Password" required></ion-input >
+  </ion-item>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button class="ionpadding" expand="full" shape="round" color="dark" (click)="login(user)">
+        Sign In
+        </ion-button>
+      </ion-col>
+  </ion-row>
+</ion-grid>
+    <p class="ion-text-center">Dont't have an account? <span [routerLink]="['/register']" color="danger">Sign Up</span></p>
+  </ion-card-content>
+  </ion-card>
+</div>
+
+<ion-button class="ionpadding" expand="full" shape="round" color="dark" [routerLink]="['/login-admin']" routerLinkActive="router-link-active" >Login As Admin</ion-button>
+
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title class="ion-text-center">Book Library Store</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen [scrollEvents]="true" (ionScroll)="onScroll($event)" >
+
+<ion-slides mode="ios" pager="true" autoplay="5000" loop="true">
+  <ion-slide>
+    <img src="./assets/1.png" alt="">
+  </ion-slide>
+  <ion-slide>
+    <img src="./assets/2.png" alt="">
+  </ion-slide>
+  <ion-slide>
+    <img src="./assets/3.png" alt="">
+  </ion-slide>
+</ion-slides>
+
+<h4 class="ion-text-center"><strong>Features Product</strong></h4>
+
+<ion-card>
+<ion-slides mode="ios" pager="true" autoplay="5000" loop="true">
+  <ion-slide>
+    <img src="./assets/product1.jpg" alt="">
+  </ion-slide>
+  <ion-slide>
+    <img src="./assets/product2.jpg" alt="">
+  </ion-slide>
+  <ion-slide>
+    <img src="./assets/product3.jpg" alt="">
+  </ion-slide>
+  <ion-slide>
+    <img src="./assets/product4.jpg" alt="">
+  </ion-slide>
+</ion-slides>
+</ion-card>
+
+
+</ion-content>

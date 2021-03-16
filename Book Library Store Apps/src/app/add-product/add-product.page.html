@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <form [formGroup]="productForm" (ngSubmit)="CreateProduct()">
+      <h4 class="ion-text-center">Add New Book Data</h4>
+      <ion-card color="danger" class="ion-padding">
+      <ion-label position="floating">Product Images</ion-label>
+      <ion-input formControlName="Images"></ion-input><br>
+
+      <ion-label position="floating">Product Name</ion-label>
+      <ion-input formControlName="Name"></ion-input><br>
+
+      <ion-label position="floating">Product Price</ion-label>
+      <ion-input formControlName="Price"></ion-input><br>
+
+      <ion-label position="floating">Product Author</ion-label>
+      <ion-input formControlName="Author"></ion-input><br>
+
+      <ion-label position="floating">Product Amount</ion-label>
+      <ion-input formControlName="Amount"></ion-input><br>
+    </ion-card>
+
+      <ion-button (click)="CreateProduct()" [disabled]="productForm.invalid" expand="block" fill="solid" shape="round" color="dark">Create</ion-button>
+
+  </form>
+
+  
+
+</ion-content>
